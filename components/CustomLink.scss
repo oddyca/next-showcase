@@ -1,0 +1,14 @@
+.link_btn {
+  background-color:rgb(59, 62, 241);
+  color: white;
+  padding: .75rem 2rem;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    background-color:rgb(89, 92, 243);
+  }
+}

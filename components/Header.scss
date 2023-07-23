@@ -1,0 +1,34 @@
+.header {
+  position: absolute;
+  max-width: 1440px;
+  height: fit-content;
+  padding: 1rem;
+  top: 2rem;
+  right: 2rem;
+  left: 2rem;
+  margin: 0 auto;
+  /*background-color: #ffffff15;
+  backdrop-filter: blur(16px); 
+  border-radius: 25px; */
+  color: white;
+  border-bottom: solid 1px rgba(88, 88, 88, 0.507);
+  display: flex;
+  justify-content: space-between;
+
+  & .header__nav {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+
+    & a {
+      text-decoration: none;
+      cursor: pointer;
+      color: rgb(197, 197, 197);
+      font-size: 14px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
