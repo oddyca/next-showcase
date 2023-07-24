@@ -8,7 +8,7 @@ export default function Landing() {
         <div className='hero__welcome'>
           <h1>Find and book events — quickly and easily!</h1>
           <p>Streamline your leisure experience with our effortless booking process.</p>
-          <CustomLink linkTo={'#'} innerText={'Find Events'}/>
+          <CustomLink linkTo={'#events'} innerText={'Find Events'}/>
         </div>
       </div>
     </div>

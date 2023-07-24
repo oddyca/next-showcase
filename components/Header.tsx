@@ -7,10 +7,12 @@ export default function Header() {
       <div className='header__logo'>
         <Image src='' alt='site logo'/>
       </div>
+      <nav>
       <ul className='header__nav'>
         <li className='nav__link'><a href='#'>Contact</a></li>
         <li className='nav__link'><a href='#'>About</a></li>
       </ul>
+      </nav>
     </header>
   )
 }
