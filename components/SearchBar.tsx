@@ -1,16 +1,21 @@
 'use client'
 
-import React from 'react'
+import { useState } from 'react';
+import { SearchEvent } from '@/components';
 
 export default function SearchBar() {
+
+  const [bandName, setBandName] = useState('');
+
   return (
-    <div className='search-bar__wrapper'>
-      <input
-        className='search-bar__input'
-        type='text'
-        placeholder='Search Events'
-      />
-    </div>
+    <form className='search-bar__wrapper'>
+      <>
+        <SearchEvent
+          bandName={bandName}
+          setBandName={setBandName}
+        />
+      </>
+    </form>
     
   )
 }

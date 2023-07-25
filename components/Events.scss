@@ -42,3 +42,27 @@
   }
 }
 
+.search-event__input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & button {
+    background: none;
+    border: none;
+  }
+
+  & input {
+    height: 24px;
+    width: 100%;
+    border: none;
+    border-bottom: solid 2px #ffffff15;
+    background-color: transparent;
+    color: white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+

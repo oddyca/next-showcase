@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from "./Footer";
 import Events from './Events';
 import SearchBar from "./SearchBar";
+import SearchEvent from './SearchEvent';
 
 export {
   Landing,
@@ -10,4 +11,5 @@ export {
   Footer,
   Events,
   SearchBar,
+  SearchEvent,
 }
