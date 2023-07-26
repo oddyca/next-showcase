@@ -1,11 +1,10 @@
 import './Events.scss';
 import { SearchBar } from '@/components';
-import AllEvents from './AllEvents';
 import dynamic from 'next/dynamic';
+import { PlaceholderCard } from '@/components';
 
-const DynamicAllEvents = dynamic(() => import('./AllEvents'), {
-  ssr: false,
-  loading: () => <p>Fetcheing...</p>
+const DynamicAllEvents = dynamic(() => import('@/components/AllEvents'), {
+  loading: () => <p>loading...</p>
 });
 
 export default function Events() {
@@ -16,7 +15,9 @@ export default function Events() {
         <p>Explore out events you might like</p>
       </div>
       <SearchBar />
-      <DynamicAllEvents />
+      <div className='events__cards'>
+        <DynamicAllEvents />
+      </div>
     </div>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { getAllEventst } from '@/controller/Controller';
+import { EventCard } from '@/components';
 
 export default function AllEvents() {
   const [toRender, setToRender] = useState([]);
@@ -16,10 +17,10 @@ export default function AllEvents() {
   }, []);
 
   const renderEventsData = () => {
-    return (toRender.map((data: any, id: number) => {
-      return (<h1 key={id}>{data.name}</h1>)
-    }))
-  }
+    return toRender.map((data: any, id: number) => {
+      return <EventCard key={id} />
+    }
+  )}
   return (
     <>
       {toRender === null 

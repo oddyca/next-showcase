@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import Events from './Events';
 import SearchBar from "./SearchBar";
 import SearchEvent from './SearchEvent';
+import PlaceholderCard from "./PlaceholderCard";
+import EventCard from "./EventCard";
 
 export {
   Landing,
@@ -12,4 +14,6 @@ export {
   Events,
   SearchBar,
   SearchEvent,
+  PlaceholderCard,
+  EventCard
 }
