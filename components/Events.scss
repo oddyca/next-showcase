@@ -49,7 +49,8 @@
 
   & button {
     background: none;
-    border: none;
+    border: solid 1px pink;
+    cursor: pointer;
   }
 
   & input {

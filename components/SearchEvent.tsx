@@ -6,7 +6,6 @@ import { Combobox, Transition } from '@headlessui/react';
 import { useState, Fragment } from 'react';
 
 export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
-
   const [query, setQuery] = useState('');
 
   return (
@@ -26,15 +25,14 @@ export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
             displayValue={(bandName: string) => bandName}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <Transition
+          {/* <Transition
             as={Fragment}
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacitty-0"
             afterLeave={() => setQuery('')}
           >
-
-          </Transition>
+          </Transition> */}
         </div>
       </Combobox>
     </div>

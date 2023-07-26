@@ -1,5 +1,12 @@
 import './Events.scss';
 import { SearchBar } from '@/components';
+import AllEvents from './AllEvents';
+import dynamic from 'next/dynamic';
+
+const DynamicAllEvents = dynamic(() => import('./AllEvents'), {
+  ssr: false,
+  loading: () => <p>Fetcheing...</p>
+});
 
 export default function Events() {
   return (
@@ -9,6 +16,7 @@ export default function Events() {
         <p>Explore out events you might like</p>
       </div>
       <SearchBar />
+      <DynamicAllEvents />
     </div>
   )
 }
