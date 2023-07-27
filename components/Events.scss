@@ -67,10 +67,15 @@
   }
 }
 
-.events__cards {
-  width: 100%;
+.events__wrapper {
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+.events__cards {
+  width: 90%;
+  display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1.5rem;
 }

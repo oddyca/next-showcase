@@ -20,3 +20,7 @@ export interface EventCardProps {
   genre: string,
   place: string,
 }
+
+export interface ImageObject {
+  [key: string]: string | number | boolean
+}

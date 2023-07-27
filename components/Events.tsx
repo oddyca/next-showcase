@@ -22,8 +22,10 @@ export default function Events() {
         <p>Explore out events you might like</p>
       </div>
       <SearchBar />
-      <div className='events__cards'>
-        <DynamicAllEvents />
+      <div className="events__wrapper">
+        <div className='events__cards'>
+          <DynamicAllEvents />
+        </div>
       </div>
     </div>
   )
