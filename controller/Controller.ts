@@ -1,7 +1,7 @@
 const API_ENDPOINT = 'https://app.ticketmaster.com/discovery/v2/events';
 const APIKEY = 'GiqK7PFzFyQWRNPYS0W1D3d8x5X6ABxC'
 
-export const getAllEventst = async (): Promise<any> => {
+export const getAllEvents = async (): Promise<any> => {
   const params = new URLSearchParams({
     segmentName: 'Music',
     countryCode: 'US',

@@ -1,0 +1,61 @@
+.events__card {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  width: 305px;
+  height: 359px;
+  background-color: #0F0F0F;
+  border: solid 1px #282828;
+  border-radius: 5px;
+
+  & .card__image {
+    position: relative;
+    width: 100%;
+    height: 369px;
+    border-radius: 5px 5px 0 0;
+  }
+
+  & .card__main {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 0 .75rem .75rem .75rem;
+
+    & .card__header {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      & .card__date {
+        width: 44px;
+        height: 14px;
+        border-radius: 5px;
+      }
+      
+      & .card__name {
+        width: 100%;
+        height: 24px;
+        border-radius: 5px;
+      }
+    }
+
+    & .card__genre {
+      width: 44px;
+      height: 14px;
+      border-radius: 5px;
+    }
+
+    & .card__place {
+      width: 56px;
+      height: 20px;
+      border-radius: 5px;
+    }
+
+    & .card__cta {
+      align-self: end;
+      width: 114px;
+      height: 36px;
+      border-radius: 25px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import './PlaceholderCard.scss';
 
 export default function PlaceholderCard() {
   return (

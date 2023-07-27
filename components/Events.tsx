@@ -4,7 +4,14 @@ import dynamic from 'next/dynamic';
 import { PlaceholderCard } from '@/components';
 
 const DynamicAllEvents = dynamic(() => import('@/components/AllEvents'), {
-  loading: () => <p>loading...</p>
+  ssr: false,
+  loading: () => {
+    const loadingElements = [];
+    for (let i = 0; i < 10; i++) {
+      loadingElements.push(<PlaceholderCard key={i} />);
+    }
+    return <>{loadingElements}</>;
+  }
 });
 
 export default function Events() {

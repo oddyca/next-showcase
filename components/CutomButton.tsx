@@ -1,7 +1,8 @@
-import React from 'react'
+import './CustomLink.scss';
+import { CustomButton } from '../types/types';
 
-export default function CutomButton() {
+export default function CustomButton({ innerText, onClick }: CustomButton) {
   return (
-    <button>CutomButton</button>
+    <a className='custom_btn' onClick={onClick}>{innerText}</a>
   )
 }
