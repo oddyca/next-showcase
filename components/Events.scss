@@ -23,6 +23,8 @@
 }
 
 .search-bar__wrapper {
+  position: relative;
+  z-index: 200;
   width: 100%;
   padding: 1rem;
   border-radius: 15px;
@@ -65,12 +67,38 @@
       outline: none;
     }
   }
+
+  & .search__options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 2.75rem;
+    left: 0;
+    width: 100%;
+    background-color: #0F0F0F;
+    border: solid 1px #282828;
+    list-style: none;
+    z-index: 200;
+
+    & .search__option {
+      width: 100%;
+      padding: .65rem;
+      border-bottom: 1px solid #282828;
+      cursor: pointer;
+    }
+
+    & .active-search {
+      background-color: rgb(89, 92, 243);
+    }
+  }
 }
 
 .events__cards {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
   min-height: 1248px;
+  z-index: 10;
 }

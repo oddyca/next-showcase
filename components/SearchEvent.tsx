@@ -54,12 +54,12 @@ export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
             leaveTo="opacitty-0"
             afterLeave={() => setQuery('')}
           >
-            <Combobox.Options>
+            <Combobox.Options className='search__options'>
               {filteredArtists.length === 0 && query !== '' ? '' : (
                 filteredArtists.map(item => (
                   <Combobox.Option
                     key={item}
-                    className={({ active }) => `search__event-option ${active ? 'active-search' : 'nonactive-search'}`}
+                    className={({ active }) => `search__option ${active ? 'active-search' : ''}`}
                     value={item}
                   >
                     {item}
