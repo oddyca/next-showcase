@@ -19,6 +19,7 @@ export interface EventCardProps {
   name: string,
   genre: string,
   place: string,
+  note: string,
 }
 
 export interface ImageObject {

@@ -13,9 +13,27 @@ export const getAllEvents = async (): Promise<any> => {
   try {
     const response = await fetch(`${API_ENDPOINT}?${queryString}`);
     const data = await response.json();
-    console.log(data);
     return data;
   } catch(e) {
+    console.log(e);
+  }
+}
+
+export const searchArtists = async (): Promise<any> => {
+  const params = new URLSearchParams({
+    segmentName: 'Music',
+    countryCode: 'US',
+    size: '200',
+    apikey: APIKEY
+  });
+  const queryString = params.toString();
+
+  try {
+    const response = await fetch(`${API_ENDPOINT}?${queryString}`);
+    const data = await response.json();
+    return data;
+  } catch(e) {
+    console.log('___//ERROR:')
     console.log(e);
   }
 }

@@ -5,7 +5,7 @@ import './EventCards.scss';
 import { CustomButton } from '@/components';
 import { EventCardProps } from '../types/types';
 
-export default function EventCard({ img, date, name, genre, place }: EventCardProps) {
+export default function EventCard({ img, date, name, genre, place, note }: EventCardProps) {
   const handleClick = () => {
 
   }
@@ -24,7 +24,32 @@ export default function EventCard({ img, date, name, genre, place }: EventCardPr
       
       <div className="card__main">
         <div className="card__header">
-          <div className="card__date">{date}</div>
+          <div className="card__date">
+            {date}
+            <div className="card__important">
+              {note && note.length &&
+                <>
+                  <Image
+                    src='/caution.svg'
+                    alt='caution icon'
+                    width={20}
+                    height={20}
+                    className='message-icon'
+                    onMouseOver={(e) => {
+                      const sibling =  (e.target as HTMLImageElement).nextElementSibling!
+                      sibling.classList.add('show-message');
+                    }}
+                    onMouseLeave={(e) => {
+                      const sibling =  (e.target as HTMLImageElement).nextElementSibling!
+                      sibling.classList.remove('show-message');
+                    }}
+                />
+                <div className="important__message">{note}</div>
+                </>
+              }
+              
+            </div>
+          </div>
           <div className="card__name">
             {name}
             <div className="card__genre">{genre}</div>
