@@ -18,6 +18,7 @@ export default function EventCard({ img, date, name, genre, place, note }: Event
           alt='event image'
           width={305}
           height={203}
+          unoptimized={true}
           objectFit='cover'
         />
       </div>
