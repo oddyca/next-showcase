@@ -14,11 +14,29 @@
   border: solid 1px #282828;
   border-radius: 5px;
 
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
   & .placeholder__image {
     width: 100%;
     height: 369px;
     border-radius: 5px 5px 0 0;
     @include placeholder-background;
+
+    @media screen and (max-width: 1000px) {
+      flex: 2;
+      height: 100%;
+      border-radius: 5px 0 0 5px;
+
+      & .card_img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+      }
+    }
 
     &::before {
       content: '';
@@ -37,6 +55,11 @@
     flex-direction: column;
     gap: .75rem;
     padding: 0 .75rem .75rem .75rem;
+
+    @media screen and (max-width: 1000px) {
+      flex: 1;
+      padding: 1rem 1rem 1rem 0;
+    }
 
     & .palceholder__header {
       display: flex;
@@ -122,6 +145,10 @@
       width: 114px;
       height: 36px;
       border-radius: 25px;
+
+      @media screen and (max-width: 1000px) {
+        
+      }
 
       &::before {
         content: '';

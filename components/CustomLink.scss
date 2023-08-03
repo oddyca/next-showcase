@@ -1,4 +1,4 @@
-.link_btn, .custom_btn {
+.link_btn {
   background-color:rgb(59, 62, 241);
   color: white;
   padding: .5rem 1.25rem;
@@ -11,8 +11,4 @@
   &:hover {
     background-color:rgb(89, 92, 243);
   }
-}
-
-.custom_btn {
-  font-size: 14px;
 }

@@ -87,7 +87,7 @@
           & .show-message {
             display: block;
             position: absolute;
-            width: 256px;
+            width: 13.5rem;
             top: 0;
             left: 2.5rem;
             border: solid 1px rgb(177, 177, 177);
@@ -95,9 +95,10 @@
             background-color: #0F0F0F;
             padding: .5rem;
             z-index: 100;
+            line-height: 1rem;
 
             @media screen and (max-width: 1000px) {
-              left: -5rem;
+              left: -12rem;
               top: 1.5rem;
             }
           }

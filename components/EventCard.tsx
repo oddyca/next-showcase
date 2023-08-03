@@ -1,14 +1,27 @@
 'use client'
 
 import Image from 'next/image';
+import { useState } from 'react';
 import './EventCards.scss';
-import { CustomButton } from '@/components';
+import { MoreDetailsModal } from '@/components';
 import { EventCardProps } from '../types/types';
 
 export default function EventCard({ img, date, name, genre, place, note }: EventCardProps) {
-  const handleClick = () => {
-
+  const eventObject = {
+    img: img,
+    date: date,
+    name: name,
+    genre: genre,
+    place: place,
+    note: note
   }
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = (): void => {
+    setIsOpen(true)
+  }
+
   return (
     <div className='events__card'>
       <div className="card__image">
@@ -58,7 +71,13 @@ export default function EventCard({ img, date, name, genre, place, note }: Event
         </div>
         <div className="card__place">{place}</div>
         <div className="card__cta">
-          <CustomButton onClick={handleClick} innerText={'MORE DETAILS'} />
+          <MoreDetailsModal
+            isOpen={isOpen}
+            closeModal={() => setIsOpen(false)}
+            eventObject={eventObject}
+            onClick={handleClick}
+            innerText={'MORE DETAILS'} 
+          />
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
   const [isPending, startTransition] = useTransition();
 
   useEffect(() =>{
-    // useTransition to filter
     const loadArtists = async () => {
       const response = await searchArtists();
       const allArtists = new Set<string>()
@@ -28,11 +27,11 @@ export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
       item.toLocaleUpperCase()
         .replace(/\s+/g, '')
         .includes(query.toLocaleUpperCase().replace(/\s+/g, '')))
-    )// startTransition(() => {})
+    )
 
   return (
     <div className='search-event'>
-      <Combobox>
+      <Combobox value={bandName} onChange={setBandName} nullable>
         <div className='search-event__input'>
           <Combobox.Button>
             <Image
@@ -55,17 +54,23 @@ export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
             afterLeave={() => setQuery('')}
           >
             <Combobox.Options className='search__options'>
-              {filteredArtists.length === 0 && query !== '' ? '' : (
+              {
                 filteredArtists.map(item => (
                   <Combobox.Option
                     key={item}
-                    className={({ active }) => `search__option ${active ? 'active-search' : ''}`}
+                    className={({ active }) => `search__option ${active ? 'search_active' : ''}`}
                     value={item}
                   >
-                    {item}
+                    {({selected, active}) => (
+                      <>
+                        <span>
+                          {item}
+                        </span>
+                      </>
+                    )}
                   </Combobox.Option>
                 ))
-                )}
+              }
             </Combobox.Options>
           </Transition>
         </div>

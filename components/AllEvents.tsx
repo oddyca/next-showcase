@@ -21,7 +21,7 @@ export default function AllEvents() {
     let img = '';
 
     arr.map((val: ImageObject) => {
-      if (val["width"] === 1024) img = val['url'].toString();
+      if (val["width"] === 640) img = val['url'].toString();
       return
     });
 
@@ -58,8 +58,12 @@ export default function AllEvents() {
   )}
   return (
     <>
-      {toRender.length !== 0 && 
-        renderEventsData()
+      {toRender.length !== 0
+        ? renderEventsData()
+        : <div className='fetch_error'>
+            <h1>Oops, something went wrong!</h1>
+            <h3>Try reloading the page.</h3>
+          </div>
       }
     </>
   )

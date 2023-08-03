@@ -1,6 +1,6 @@
 import Landing from "./Landing";
 import CustomLink from "./CustomLink";
-import CustomButton from './CutomButton';
+import MoreDetailsModal from './MoreDetailsModal/MoreDetailsModal';
 import Header from './Header';
 import Footer from "./Footer";
 import Events from './Events';
@@ -12,7 +12,7 @@ import EventCard from "./EventCard";
 export {
   Landing,
   CustomLink,
-  CustomButton,
+  MoreDetailsModal,
   Header,
   Footer,
   Events,
