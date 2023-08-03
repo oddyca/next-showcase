@@ -14,16 +14,32 @@
   }
 }
 
+.modal__portal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  z-index: 250;
+
+  & .modal__bg {
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    opacity: 55%;
+    z-index: 200;
+  }
+}
+
 .modal__window {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   gap: 1.5rem;
-  top: 0;
-  left: 0;
   width: 480px;
-  height: 640px;
+  min-height: 640px;
+  height: fit-content;
   border: solid 1px rgb(177, 177, 177);
   border-radius: 5px;
   background-color: #181818;
@@ -74,4 +90,12 @@
       color: #8d8d8d;
     }
   }
+}
+
+.modal__test {
+  position: absolute;
+  offset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
