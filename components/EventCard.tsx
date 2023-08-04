@@ -6,14 +6,17 @@ import './EventCards.scss';
 import { MoreDetailsModal } from '@/components';
 import { EventCardProps } from '../types/types';
 
-export default function EventCard({ img, date, name, genre, place, note }: EventCardProps) {
+export default function EventCard({ img, date, name, genre, place, note, info, prices, venue }: EventCardProps) {
   const eventObject = {
     img: img,
     date: date,
     name: name,
     genre: genre,
     place: place,
-    note: note
+    note: note,
+    info: info,
+    prices: prices,
+    venue
   }
 
   const [isOpen, setIsOpen] = useState(false);

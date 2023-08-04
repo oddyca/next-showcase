@@ -40,7 +40,7 @@ export default function AllEvents() {
     const month = months[date.getUTCMonth()];
     const year = date.getUTCFullYear();
   
-    return `${dayOfWeek}, ${day} ${month}, ${year}`;
+    return `${dayOfWeek}, ${month} ${day}, ${year}`;
   }
 
   const renderEventsData = () => {
@@ -53,6 +53,14 @@ export default function AllEvents() {
         genre={data.classifications[0]["genre"]["name"]}
         place={data["_embedded"]["venues"][0]["city"]["name"]}
         note={data['pleaseNote']}
+        info={data['info']}
+        prices={data['priceRanges']}
+        venue={
+          {
+            name: data['_embedded']['venues'][0]['name'],
+            venUrl: data['_embedded']['venues'][0]['url']
+          }
+        }
       />
     }
   )}

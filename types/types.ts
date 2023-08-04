@@ -8,6 +8,13 @@ export type TSearchEvent = {
   setBandName: (value: string) => void
 }
 
+interface eventPrcies {
+  type: string,
+  currency: string,
+  min: number,
+  max: number
+}
+
 export interface EventCardProps {
   img: string,
   date: string,
@@ -15,6 +22,12 @@ export interface EventCardProps {
   genre: string,
   place: string,
   note: string,
+  info: string,
+  prices: eventPrcies[],
+  venue: {
+    name: string,
+    venUrl: string
+  }
 }
 
 export type MoreDetailsModal = {
