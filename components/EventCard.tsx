@@ -6,7 +6,7 @@ import './EventCards.scss';
 import { MoreDetailsModal } from '@/components';
 import { EventCardProps } from '../types/types';
 
-export default function EventCard({ img, date, name, genre, place, note, info, prices, venue }: EventCardProps) {
+export default function EventCard({ img, date, name, genre, place, note, info, prices, url, venue, socials }: EventCardProps) {
   const eventObject = {
     img: img,
     date: date,
@@ -16,7 +16,9 @@ export default function EventCard({ img, date, name, genre, place, note, info, p
     note: note,
     info: info,
     prices: prices,
-    venue
+    url,
+    venue,
+    socials
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +37,6 @@ export default function EventCard({ img, date, name, genre, place, note, info, p
           width={305}
           height={203}
           unoptimized={true}
-          objectFit='cover'
         />
       </div>
       

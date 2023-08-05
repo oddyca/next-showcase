@@ -24,9 +24,13 @@ export interface EventCardProps {
   note: string,
   info: string,
   prices: eventPrcies[],
+  url: string,
   venue: {
     name: string,
     venUrl: string
+  },
+  socials: {
+    [social: string]: {[url: string]: string}[]
   }
 }
 

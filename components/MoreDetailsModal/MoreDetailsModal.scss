@@ -117,6 +117,7 @@
     background-color: #181818;
     border-radius: 15px 15px 0 0;
     margin-top: -1rem;
+    flex: 1;
 
     & .modal__table {
       width: 100%;
@@ -130,17 +131,42 @@
         display: flex;
         justify-content: space-between;
 
-        & .table__value {
-          color: white;
+        & .link {
+          display: flex;
+          gap: .5rem;
+          align-items: center;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+            color: rgb(89, 92, 243);
+            & img {
+              filter: invert(33%) sepia(96%) saturate(5036%) hue-rotate(220deg) brightness(101%) contrast(91%);
+            }
+          }
         }
 
-        & .price__value {
-          color: white;
-          padding: 0.25rem 0.5rem;
-          border-radius: 5px;
-          background: #454545;
+        & .table__prices {
+          display: flex;
+          align-items: center;
+          gap: .5rem;
+
+          & .price__from {
+            color: #8d8d8d;
+          }
+
+          & .price__value {
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            background: #454545;
+          }
         }
-      }
+
+        & .table__value {
+          color: white;
+        }       
+      }      
     }
 
     & .modal__description {
@@ -151,6 +177,43 @@
       & .event__description {
         color: white;
         line-height: 120%;
+      }
+    }
+
+    & .modal__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+
+      & .footer__socials {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        gap: .5rem;
+
+        & .socials_icon {
+          filter: invert(80%);
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      & .footer__book {
+        background-color:rgb(59, 62, 241);
+        color: white;
+        padding: .5rem 1.25rem;
+        font-weight: 600;
+        border-radius: 25px;
+        text-decoration: none;
+        width: fit-content;
+        cursor: pointer;
+
+        &:hover {
+          background-color:rgb(89, 92, 243);
+        }
       }
     }
   }

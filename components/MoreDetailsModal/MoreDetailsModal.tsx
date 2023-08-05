@@ -2,18 +2,58 @@
 
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import './MoreDetailsModal.scss';
 import { MoreDetailsModal } from '../../types/types';
 
 export default function MoreDetailsModal({ innerText, isOpen, onClick, closeModal, eventObject }: MoreDetailsModal) {
-
-  const { img, date, name, genre, place, info, prices, venue } = eventObject;
-
+  const { img, date, name, genre, place, info, prices, url, venue, socials} = eventObject;
   const generateColor = (): string => {
     return "hsl(" + 360 * Math.random() + ',' +
                (20 + 70 * Math.random()) + '%,' + 
                (75 + 10 * Math.random()) + '%)'
+  }
+
+  interface linkObj {
+    [key: string]: string
+  }
+
+  const filterSocials = () => {
+    const socialsLinks: linkObj = {}
+
+    Object.keys(socials).forEach(elem => {
+      if (
+        elem === 'twitter' ||
+        elem === 'youtube' ||
+        elem === 'spotify' ||
+        elem === 'instagram'
+      ) {
+        socialsLinks[elem] = socials[elem][0]['url'];
+      }
+    });
+
+    console.log(socialsLinks)
+
+    return (
+      <>
+        { Object.keys(socialsLinks).map(socialNetwork => (
+          <a
+            key={socialNetwork}
+            href={socialsLinks[socialNetwork]}
+            target="_blank"
+          >
+            <Image
+              src={`/${socialNetwork}.svg`}
+              height={32}
+              width={32}
+              alt='social network icon'
+              className='socials_icon'
+            />
+          </a>
+          ))
+        }
+      </>
+   )
   }
 
   return (
@@ -58,20 +98,39 @@ export default function MoreDetailsModal({ innerText, isOpen, onClick, closeModa
                     </div>
                     <div className="table__row">
                       <p>Venue</p>
-                      <a
-                        className='table__value'
-                        href={venue['venUrl']}
-                        target='_blank'
-                      >{venue['name']}</a>
+                        <a
+                          className='table__value link'
+                          href={venue['venUrl']}
+                          target='_blank'
+                        >{venue['name']}
+                          <Image
+                            src='/link.svg'
+                            width={16}
+                            height={16}
+                            alt='link icon'
+                          />
+                        </a>
                     </div>
                     <div className="table__row">
                       <p>Price</p>
-                      <p className='price__value'>{prices ? '$' + prices[0]['min'] : '-'}</p>
+                      {
+                        prices 
+                        ? <div className='table__prices'>
+                            <span className='price__from'>from</span>
+                            <p className='price__value'>{'$' + prices[0]['min']}</p>
+                          </div>
+                        : <p className='price__value'>-</p>  
+                      }
+                      
                     </div>
                   </div>
                   <div className='modal__description'>
                     <p>Info</p>
                     <p className='event__description'>{info}</p>
+                  </div>
+                  <div className="modal__footer">
+                    <div className="footer__socials">{filterSocials()}</div>
+                    <a href={url} target='_blank' className='footer__book'>BOOK</a>
                   </div>
                 </div>
               </Dialog.Panel>         

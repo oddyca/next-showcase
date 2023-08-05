@@ -44,6 +44,7 @@ export default function AllEvents() {
   }
 
   const renderEventsData = () => {
+
     return toRender.map((data: any, id: number) => {
       return <EventCard 
         key={id}
@@ -55,12 +56,14 @@ export default function AllEvents() {
         note={data['pleaseNote']}
         info={data['info']}
         prices={data['priceRanges']}
+        url={data['url']}
         venue={
           {
             name: data['_embedded']['venues'][0]['name'],
             venUrl: data['_embedded']['venues'][0]['url']
           }
         }
+        socials={data["_embedded"]['attractions'][0]['externalLinks']}
       />
     }
   )}

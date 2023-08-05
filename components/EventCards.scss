@@ -21,6 +21,10 @@
     border-radius: 5px 5px 0 0;
     overflow: hidden;
 
+    & .card_img {
+      object-fit: cover;
+    }
+
     @media screen and (max-width: 1000px) {
       flex: 2;
       height: 100%;
