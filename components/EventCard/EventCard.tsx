@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import './EventCards.scss';
+import '../EventCards.scss';
 import { MoreDetailsModal } from '@/components';
-import { EventCardProps } from '../types/types';
+import { EventCardProps } from '../../types/types';
 
 export default function EventCard({ img, date, name, genre, place, note, info, prices, url, venue, socials }: EventCardProps) {
   const eventObject = {

@@ -1,0 +1,23 @@
+.footer {
+  background-color: #282828;
+
+  & .footer__container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    & .footer__column {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+
+      & .footer__link {
+        display: flex;
+        gap: .5rem;
+      }
+    }
+  }
+}

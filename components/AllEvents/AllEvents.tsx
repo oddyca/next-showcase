@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { getAllEvents } from '@/controller/Controller';
 import { EventCard } from '@/components';
-import { ImageObject } from '../types/types';
+import { ImageObject } from '../../types/types';
 
 export default function AllEvents() {
   const [toRender, setToRender] = useState([]);

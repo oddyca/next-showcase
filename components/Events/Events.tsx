@@ -3,7 +3,7 @@ import { SearchBar } from '@/components';
 import dynamic from 'next/dynamic';
 import { PlaceholderCard } from '@/components';
 
-const DynamicAllEvents = dynamic(() => import('@/components/AllEvents'), {
+const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'), {
   ssr: false,
   loading: () => {
     const loadingElements = [];
