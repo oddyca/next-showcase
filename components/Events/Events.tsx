@@ -14,6 +14,7 @@ const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'
   }
 });
 
+
 export default function Events() {
   return (
     <div className="events__container">
@@ -22,9 +23,9 @@ export default function Events() {
         <p>Explore out events you might like</p>
       </div>
       <SearchBar />
-        <section className='events__cards'>
-          <DynamicAllEvents />
-        </section>
+      <section className='events__cards'>
+        <DynamicAllEvents />
+      </section>
     </div>
   )
 }

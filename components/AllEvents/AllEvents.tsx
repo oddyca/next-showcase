@@ -10,7 +10,7 @@ export default function AllEvents() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const fetchedData = await getAllEvents();
+      const fetchedData = await getAllEvents(); // ALL EVENTS FETCH
       setToRender(fetchedData["_embedded"]["events"]);
     }
 

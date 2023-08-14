@@ -33,14 +33,12 @@ export default function SearchEvent({ bandName, setBandName }: TSearchEvent) {
     <div className='search-event'>
       <Combobox value={bandName} onChange={setBandName} nullable>
         <div className='search-event__input'>
-          <Combobox.Button>
-            <Image
-              src='/search.svg'
-              width={20}
-              height={20}
-              alt='search icon'
-            />
-          </Combobox.Button>
+          <Image
+            src='/search.svg'
+            width={20}
+            height={20}
+            alt='search icon'
+          />
           <Combobox.Input
             placeholder='Search Event'
             displayValue={(bandName: string) => bandName}
