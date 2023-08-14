@@ -3,19 +3,19 @@
 import { useState, useEffect } from 'react';
 import { getAllEvents } from '@/controller/Controller';
 import { EventCard } from '@/components';
-import { ImageObject } from '../../types/types';
+import { ImageObject, EventsProps } from '../../types/types';
 
-export default function AllEvents() {
-  const [toRender, setToRender] = useState([]);
+export default function AllEvents({ toRender }: EventsProps) {
+  // const [toRender, setToRender] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedData = await getAllEvents(); // ALL EVENTS FETCH
-      setToRender(fetchedData["_embedded"]["events"]);
-    }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const fetchedData = await getAllEvents(); // ALL EVENTS FETCH
+  //     setToRender(fetchedData["_embedded"]["events"]);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const findImg = (arr: ImageObject[]): string => {
     let img = '';

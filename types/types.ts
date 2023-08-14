@@ -8,6 +8,10 @@ export type TSearchEvent = {
   setBandName: (value: string) => void
 }
 
+export type EventsProps = {
+  toRender: Object[]
+}
+
 interface eventPrcies {
   type: string,
   currency: string,

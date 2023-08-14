@@ -1,7 +1,8 @@
-import './Events.scss';
 import { SearchBar } from '@/components';
 import dynamic from 'next/dynamic';
 import { PlaceholderCard } from '@/components';
+import { EventsProps } from '@/types/types';
+import './Events.scss';
 
 const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'), {
   ssr: false,
@@ -15,7 +16,7 @@ const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'
 });
 
 
-export default function Events() {
+export default function Events({ toRender }: EventsProps) {
   return (
     <div className="events__container">
       <div className="events__header">
@@ -24,7 +25,9 @@ export default function Events() {
       </div>
       <SearchBar />
       <section className='events__cards'>
-        <DynamicAllEvents />
+        <DynamicAllEvents
+          toRender={toRender}
+        />
       </section>
     </div>
   )
