@@ -1,21 +1,7 @@
-'use client'
-
-import { useState, useEffect } from 'react';
-import { getAllEvents } from '@/controller/Controller';
 import { EventCard } from '@/components';
 import { ImageObject, EventsProps } from '../../types/types';
 
 export default function AllEvents({ toRender }: EventsProps) {
-  // const [toRender, setToRender] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const fetchedData = await getAllEvents(); // ALL EVENTS FETCH
-  //     setToRender(fetchedData["_embedded"]["events"]);
-  //   }
-
-  //   fetchData();
-  // }, []);
 
   const findImg = (arr: ImageObject[]): string => {
     let img = '';

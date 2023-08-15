@@ -49,3 +49,13 @@ export type MoreDetailsModal = {
 export interface ImageObject {
   [key: string]: string | number | boolean
 }
+
+export interface SearchParams {
+  band: string,
+  genre: string,
+  state: string
+}
+
+export interface HomeProps {
+  searchParams: SearchParams
+}

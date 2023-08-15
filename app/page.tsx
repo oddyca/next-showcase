@@ -1,11 +1,15 @@
-import { Landing } from '@/components'
-import { Events } from '@/components'
+import { Landing, Events } from '@/components'
 import { getAllEvents } from '@/controller/Controller';
 import './page.scss'
+import { HomeProps } from '@/types/types';
 
-export default async function Home() {
+export default async function Home({ searchParams }: HomeProps) {
 
-  const fetchedData = await getAllEvents(); // ALL EVENTS FETCH
+  const fetchedData = await getAllEvents({ 
+    band: searchParams.band || '',
+    genre: searchParams.genre || '',
+    state: searchParams.state || ''
+   });
   const toRender = fetchedData["_embedded"]["events"];
 
   return (
