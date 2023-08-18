@@ -4,12 +4,15 @@ export type CustomLink = {
 }
 
 export type TSearchEvent = {
-  bandName: string,
-  setBandName: (value: string) => void
+  bandName: string;
+  setBandName: (value: string) => void;
+  allArtists: Set<string>;
 }
 
 export type EventsProps = {
-  toRender: Object[]
+  toRender: Object[],
+  allArtists: Set<string>,
+  allGenres: Map<string, string>
 }
 
 interface eventPrcies {
@@ -58,4 +61,8 @@ export interface SearchParams {
 
 export interface HomeProps {
   searchParams: SearchParams
+}
+
+export interface CustomFilterParams {
+  filters: Map<string, string> | undefined
 }

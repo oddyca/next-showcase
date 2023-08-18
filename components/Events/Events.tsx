@@ -16,14 +16,17 @@ const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'
 });
 
 
-export default function Events({ toRender }: EventsProps) {
+export default function Events({ toRender, allArtists, allGenres }: EventsProps) {
   return (
     <div className="events__container">
       <div className="events__header">
         <h1>Events Catalogue</h1>
         <p>Explore out events you might like</p>
       </div>
-      <SearchBar />
+      <SearchBar
+        allArtists={allArtists}
+        allGenres={allGenres}
+      />
       <section className='events__cards'>
         <DynamicAllEvents
           toRender={toRender}

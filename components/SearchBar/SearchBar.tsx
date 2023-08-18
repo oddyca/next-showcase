@@ -1,11 +1,11 @@
 'use client'
 
 import React, { useState } from 'react';
-import { SearchEvent } from '@/components';
-import './SearchBar.scss';
+import { SearchEvent, CustomFilter } from '@/components';
 import { useRouter } from 'next/navigation';
+import './SearchBar.scss';
 
-export default function SearchBar() {
+export default function SearchBar({ allArtists, allGenres }) {
 
   const [bandName, setBandName] = useState('');
   const router = useRouter();
@@ -36,16 +36,24 @@ export default function SearchBar() {
       onSubmit={handleSearch}
       className='search-bar__wrapper'
     >
-      <SearchEvent
-        bandName={bandName}
-        setBandName={setBandName}
-      />
-      <button
-        type='submit'
-        className='search__btn'
-      >
-        SEARCH
-      </button>
+      <div className="search__input">
+        <SearchEvent
+          bandName={bandName}
+          setBandName={setBandName}
+          allArtists={allArtists}
+        />
+        <button
+          type='submit'
+          className='search__btn'
+        >
+          SEARCH
+        </button>
+      </div>
+      <div className="search__filters">
+        <CustomFilter
+          allGenres={allGenres}
+        />
+      </div>
     </form>
   )
 }

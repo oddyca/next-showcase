@@ -8,6 +8,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import SearchEvent from './SearchEvents/SearchEvent';
 import PlaceholderCard from "./PlaceholderCard/PlaceholderCard";
 import EventCard from "./EventCard/EventCard";
+import CustomFilter from "./CustomFilter/CustomFilter";
 
 export {
   Landing,
@@ -19,5 +20,6 @@ export {
   SearchBar,
   SearchEvent,
   PlaceholderCard,
-  EventCard
+  EventCard,
+  CustomFilter
 }

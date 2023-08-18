@@ -1,7 +1,11 @@
 import { EventCard } from '@/components';
 import { ImageObject, EventsProps } from '../../types/types';
 
-export default function AllEvents({ toRender }: EventsProps) {
+type AllEventsProps = {
+  toRender: Object[]
+}
+
+export default function AllEvents({ toRender }: AllEventsProps) {
 
   const findImg = (arr: ImageObject[]): string => {
     let img = '';

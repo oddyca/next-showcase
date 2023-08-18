@@ -9,7 +9,7 @@ export const getAllEvents = async (filters: SearchParams ): Promise<any> => {
     countryCode: 'US',
     size: '10',
     keyword: filters.band,
-    classificationName: filters.genre,
+    genreID: filters.genre,
     stateCode: filters.state,
     apikey: APIKEY
   });
