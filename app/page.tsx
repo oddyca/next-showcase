@@ -9,7 +9,8 @@ export default async function Home({ searchParams }: HomeProps) {
   const fetchedData = await getAllEvents({ 
     band: searchParams.band || '',
     genre: searchParams.genre || '',
-    state: searchParams.state || ''
+    state: searchParams.state || '',
+    page: searchParams.page || '0'
    });
   const toRender = fetchedData["_embedded"]["events"];
 
@@ -31,6 +32,8 @@ export default async function Home({ searchParams }: HomeProps) {
           toRender={toRender}
           allArtists={allArtists}
           allGenres={allGenres}
+          pageLinks={fetchedData['_links']}
+          pages={fetchedData['page']}
         />
       </div>
     </main>

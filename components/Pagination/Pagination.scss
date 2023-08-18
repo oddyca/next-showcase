@@ -1,0 +1,14 @@
+.pagination__container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+  gap: .4rem;
+
+  & a {
+    padding: .5rem .75rem;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 5px;
+  }
+}

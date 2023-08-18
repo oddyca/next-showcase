@@ -1,6 +1,6 @@
 import { SearchBar } from '@/components';
 import dynamic from 'next/dynamic';
-import { PlaceholderCard } from '@/components';
+import { PlaceholderCard, Pagination } from '@/components';
 import { EventsProps } from '@/types/types';
 import './Events.scss';
 
@@ -15,7 +15,7 @@ const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'
   }
 });
 
-export default function Events({ toRender, allArtists, allGenres }: EventsProps) {
+export default function Events({ toRender, allArtists, allGenres, pageLinks, pages }: EventsProps) {
   return (
     <div className="events__container">
       <div className="events__header">
@@ -31,6 +31,10 @@ export default function Events({ toRender, allArtists, allGenres }: EventsProps)
           toRender={toRender}
         />
       </section>
+      <Pagination
+        pageLinks={pageLinks}
+        pages={pages}
+      />
     </div>
   )
 }

@@ -11,6 +11,7 @@ export const getAllEvents = async (filters: SearchParams ): Promise<any> => {
     keyword: filters.band,
     genreId: filters.genre,
     stateCode: filters.state,
+    page: filters.page,
     apikey: APIKEY
   });
   const queryString = params.toString();

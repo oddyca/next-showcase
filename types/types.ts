@@ -9,10 +9,22 @@ export type TSearchEvent = {
   allArtists: Set<string>;
 }
 
+interface PageLinks {
+  [key: string]: {
+    [key: string]: string
+  }
+}
+
+interface Pages {
+  [key: string]: number
+}
+
 export type EventsProps = {
   toRender: Object[],
   allArtists: Set<string>,
-  allGenres: Map<string, string>
+  allGenres: Map<string, string>,
+  pageLinks: PageLinks,
+  pages: Pages
 }
 
 interface eventPrcies {
@@ -56,7 +68,8 @@ export interface ImageObject {
 export interface SearchParams {
   band: string,
   genre: string,
-  state: string
+  state: string,
+  page: string
 }
 
 export interface SearchBarParams {
@@ -70,4 +83,9 @@ export interface HomeProps {
 
 export interface CustomFilterParams {
   filters: Map<string, string> | undefined
+}
+
+export interface PaginationProps {
+  pageLinks: PageLinks,
+  pages: Pages
 }

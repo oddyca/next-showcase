@@ -9,6 +9,7 @@ import SearchEvent from './SearchEvents/SearchEvent';
 import PlaceholderCard from "./PlaceholderCard/PlaceholderCard";
 import EventCard from "./EventCard/EventCard";
 import CustomFilter from "./CustomFilter/CustomFilter";
+import Pagination from "./Pagination/Pagination";
 
 export {
   Landing,
@@ -21,5 +22,6 @@ export {
   SearchEvent,
   PlaceholderCard,
   EventCard,
-  CustomFilter
+  CustomFilter,
+  Pagination
 }
