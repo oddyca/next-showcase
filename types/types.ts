@@ -59,6 +59,11 @@ export interface SearchParams {
   state: string
 }
 
+export interface SearchBarParams {
+  allArtists: Set<string>,
+  allGenres: Map<string, string>
+}
+
 export interface HomeProps {
   searchParams: SearchParams
 }

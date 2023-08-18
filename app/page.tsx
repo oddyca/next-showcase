@@ -19,7 +19,8 @@ export default async function Home({ searchParams }: HomeProps) {
   const allGenres = new Map<string, string>()
   response["_embedded"]["events"].forEach((artist: any) => { //_________ ANY
     allArtists.add(artist['name']);
-    allGenres.set(artist['classifications'][0]["genre"]['name'], artist['classifications'][0]["genre"]['id'])
+    let genreName = artist['classifications'][0]["genre"]['name'];
+    if (genreName.toLowerCase() !== 'undefined') allGenres.set(genreName, artist['classifications'][0]["genre"]['id'])
   }); 
 
   return (

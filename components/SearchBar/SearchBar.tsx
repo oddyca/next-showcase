@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import { SearchEvent, CustomFilter } from '@/components';
 import { useRouter } from 'next/navigation';
+import { SearchBarParams } from '@/types/types';
 import './SearchBar.scss';
 
-export default function SearchBar({ allArtists, allGenres }) {
+export default function SearchBar({ allArtists, allGenres }: SearchBarParams) {
 
   const [bandName, setBandName] = useState('');
   const router = useRouter();

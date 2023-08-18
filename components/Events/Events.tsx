@@ -15,7 +15,6 @@ const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'
   }
 });
 
-
 export default function Events({ toRender, allArtists, allGenres }: EventsProps) {
   return (
     <div className="events__container">
