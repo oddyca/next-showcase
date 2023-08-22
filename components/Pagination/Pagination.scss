@@ -6,9 +6,17 @@
   gap: .4rem;
 
   & a {
-    padding: .5rem .75rem;
+    display: block;
+    min-width: 3rem;
+    padding: .75rem 0;
+    text-align: center;
     border: 1px solid white;
     background-color: black;
     border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(41, 41, 41);
+    }
   }
 }

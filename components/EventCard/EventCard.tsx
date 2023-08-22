@@ -16,9 +16,9 @@ export default function EventCard({ img, date, name, genre, place, note, info, p
     note: note,
     info: info,
     prices: prices,
-    url,
-    venue,
-    socials
+    url: url,
+    venue: venue,
+    socials: socials
   }
 
   const [isOpen, setIsOpen] = useState(false);

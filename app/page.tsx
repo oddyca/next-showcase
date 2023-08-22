@@ -32,7 +32,6 @@ export default async function Home({ searchParams }: HomeProps) {
           toRender={toRender}
           allArtists={allArtists}
           allGenres={allGenres}
-          pageLinks={fetchedData['_links']}
           pages={fetchedData['page']}
         />
       </div>

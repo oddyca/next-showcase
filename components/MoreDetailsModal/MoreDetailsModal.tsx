@@ -21,39 +21,41 @@ export default function MoreDetailsModal({ innerText, isOpen, onClick, closeModa
   const filterSocials = () => {
     const socialsLinks: linkObj = {}
 
-    Object.keys(socials).forEach(elem => {
-      if (
-        elem === 'twitter' ||
-        elem === 'youtube' ||
-        elem === 'spotify' ||
-        elem === 'instagram'
-      ) {
-        socialsLinks[elem] = socials[elem][0]['url'];
-      }
-    });
-
-    console.log(socialsLinks)
-
-    return (
-      <>
-        { Object.keys(socialsLinks).map(socialNetwork => (
-          <a
-            key={socialNetwork}
-            href={socialsLinks[socialNetwork]}
-            target="_blank"
-          >
-            <Image
-              src={`/${socialNetwork}.svg`}
-              height={32}
-              width={32}
-              alt='social network icon'
-              className='socials_icon'
-            />
-          </a>
-          ))
+    if (socials !== undefined) {
+      Object.keys(socials).forEach(elem => {
+        if (
+          elem === 'twitter' ||
+          elem === 'youtube' ||
+          elem === 'spotify' ||
+          elem === 'instagram'
+        ) {
+          socialsLinks[elem] = socials[elem][0]['url'];
         }
-      </>
-   )
+      });
+
+      return (
+        <>
+          { Object.keys(socialsLinks).map(socialNetwork => (
+            <a
+              key={socialNetwork}
+              href={socialsLinks[socialNetwork]}
+              target="_blank"
+            >
+              <Image
+                src={`/${socialNetwork}.svg`}
+                height={32}
+                width={32}
+                alt='social network icon'
+                className='socials_icon'
+              />
+            </a>
+            ))
+          }
+        </>
+      )
+    } else {
+      return []
+    }
   }
 
   return (

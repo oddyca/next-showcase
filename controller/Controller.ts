@@ -1,5 +1,6 @@
 import { SearchParams } from "@/types/types";
 
+const URL = 'https://app.ticketmaster.com';
 const API_ENDPOINT = 'https://app.ticketmaster.com/discovery/v2/events';
 const APIKEY = 'GiqK7PFzFyQWRNPYS0W1D3d8x5X6ABxC'
 
@@ -15,9 +16,11 @@ export const getAllEvents = async (filters: SearchParams ): Promise<any> => {
     apikey: APIKEY
   });
   const queryString = params.toString();
+
+  console.log('_______filters.page', filters.page)
   
   try {
-    const response = await fetch(`${API_ENDPOINT}?${queryString}`);
+    const response = await fetch(`${API_ENDPOINT}?${ queryString }`)
     const data = await response.json();
     return data;
   } catch(e) {

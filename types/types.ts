@@ -23,7 +23,6 @@ export type EventsProps = {
   toRender: Object[],
   allArtists: Set<string>,
   allGenres: Map<string, string>,
-  pageLinks: PageLinks,
   pages: Pages
 }
 
@@ -86,6 +85,5 @@ export interface CustomFilterParams {
 }
 
 export interface PaginationProps {
-  pageLinks: PageLinks,
   pages: Pages
 }

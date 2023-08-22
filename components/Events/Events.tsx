@@ -15,7 +15,7 @@ const DynamicAllEvents = dynamic(() => import('@/components/AllEvents/AllEvents'
   }
 });
 
-export default function Events({ toRender, allArtists, allGenres, pageLinks, pages }: EventsProps) {
+export default function Events({ toRender, allArtists, allGenres, pages }: EventsProps) {
   return (
     <div className="events__container">
       <div className="events__header">
@@ -32,7 +32,6 @@ export default function Events({ toRender, allArtists, allGenres, pageLinks, pag
         />
       </section>
       <Pagination
-        pageLinks={pageLinks}
         pages={pages}
       />
     </div>
