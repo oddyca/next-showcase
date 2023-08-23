@@ -49,30 +49,23 @@ const CustomFilter: React.FC<CustomFilterProps> = ({ allGenres }) => {
             alt='up-down button'
           />
         </Listbox.Button>
-        <Transition
-          as={Fragment}
-          leave='transition ease-in duration-100'
-          leaveFrom='opacity-100'
-          leaveTo='opacity-0'
+        <Listbox.Options
+          className='filter__options'
         >
-          <Listbox.Options
-            className='filter__options'
-          >
-            {genreNames.map((genre) => (
-              <Listbox.Option 
-                key={genre}
-                value={genre}
-                className={({ active }) => `filter__option ${active ? 'filter_active' : ''}`}
-              >
-                {
-                  ({ selected }) => (
-                    <span>{genre}</span>
-                  )
-                }
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Transition>
+          {genreNames.map((genre) => (
+            <Listbox.Option 
+              key={genre}
+              value={genre}
+              className={({ active }) => `filter__option ${active ? 'filter_active' : ''}`}
+            >
+              {
+                ({ selected }) => (
+                  <span>{genre}</span>
+                )
+              }
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
       </div>
     </Listbox>
   )

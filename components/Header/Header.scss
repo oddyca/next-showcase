@@ -2,16 +2,17 @@
   position: absolute;
   max-width: 1440px;
   height: fit-content;
-  padding: 1rem;
+  padding: 1rem 0;
   top: 2rem;
-  right: 2rem;
-  left: 2rem;
+  right: 0;
+  left: 0;
   margin: 0 auto;
   /*background-color: #ffffff15;
   backdrop-filter: blur(16px); 
   border-radius: 25px; */
   color: white;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   & .header__nav {

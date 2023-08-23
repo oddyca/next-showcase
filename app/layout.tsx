@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Header, Footer } from '@/components'
 
 export const metadata: Metadata = {
-  title: 'Event Tickets | Next App',
+  title: 'NextTickets | Next App',
   description: 'Discover tickets for any event.',
 }
 

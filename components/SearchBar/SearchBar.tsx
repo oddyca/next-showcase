@@ -27,7 +27,8 @@ export default function SearchBar({ allArtists, allGenres }: SearchBarParams) {
     } else {
       searchParams.delete('band')
     }
-
+    searchParams.delete('genre');
+    searchParams.delete('page')
     const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
     router.push(newPathname, {scroll: false});
   }

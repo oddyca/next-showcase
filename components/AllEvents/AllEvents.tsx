@@ -1,5 +1,5 @@
 import { EventCard } from '@/components';
-import { ImageObject, EventsProps } from '../../types/types';
+import { ImageObject } from '../../types/types';
 
 type AllEventsProps = {
   toRender: Object[]

@@ -20,9 +20,10 @@ export default function Pagination({ pages }: PaginationProps) {
     router.push(newPathname, {scroll: false});
   };
 
+  const totalPages = pages.totalPages < 99 ? pages.totalPages : 99;
+
   const renderPageButtons = () => {
     const pageButtons = [];
-    const visiblePages = 5;
 
     if (currentPage > 2) {
       pageButtons.push(
@@ -37,7 +38,7 @@ export default function Pagination({ pages }: PaginationProps) {
       : currentPage >= 97 ? 95
       : Math.max(currentPage - 2, 0)
       ;
-    const maxPage = currentPage <= 2 ? 4 : Math.min(currentPage + 2, 99);
+    const maxPage = currentPage <= 2 && totalPages >= 5 ? 4 : Math.min(currentPage + 2, totalPages);
 
     for (let i = minPage; i <= maxPage; i++) {
       pageButtons.push(
@@ -51,7 +52,7 @@ export default function Pagination({ pages }: PaginationProps) {
       );
     }
 
-    if (currentPage < 99 - 2) {
+    if (totalPages > 5 && currentPage < 99 - 2) {
       pageButtons.push(
         <a
           key="last"
@@ -65,5 +66,5 @@ export default function Pagination({ pages }: PaginationProps) {
     return pageButtons;
   };
 
-  return <div className="pagination__container">{renderPageButtons()}</div>;
+  return <div className="pagination__container">{totalPages === 1 ? '' : renderPageButtons()}</div>;
 }

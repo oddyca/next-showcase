@@ -5,7 +5,12 @@ export default function Header() {
   return (
     <header className='header'>
       <div className='header__logo'>
-        <Image src='' alt='site logo'/>
+        <Image
+          src='/logo-text.svg'
+          alt='site logo'
+          width={200}
+          height={44}
+        />
       </div>
       <nav>
       <ul className='header__nav'>

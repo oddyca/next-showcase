@@ -2,45 +2,39 @@ import Image from 'next/image';
 import './Footer.scss';
 
 export default function Footer() {
+
+  const placeLink = (social: string, at?: string) => {
+    return (
+      <div className="footer__link">
+        <Image
+          src={`/${social.toLowerCase()}.svg`}
+          alt={`${social} logo`}
+          width={32}
+          height={32}
+        />
+        { social === 'Telegram' ?
+          <p>@emilsin</p> :
+          <a href={`https://${social.toLowerCase()}.com/${at}`} target='_blank'>{social}</a>
+        }
+      </div>
+    )
+  }
+
   return (
     <footer className='footer'>
       <div className="footer__container">
         <div className="footer__column">
           <Image
-            src=''
+            src='/logo-text.svg'
             alt='site logo'
             width={256}
             height={44}
           />
         </div>
         <div className="footer__column">
-          <div className="footer__link">
-            <Image
-              src=''
-              alt='linkedin logo'
-              width={32}
-              height={32}
-            />
-            <a href='#'>LinkedIn</a>
-          </div>
-          <div className="footer__link">
-            <Image
-                src=''
-                alt='github logo'
-                width={32}
-                height={32}
-              />
-              <a href='#'>Github</a>
-          </div>
-          <div className="footer__link">
-            <Image
-                  src=''
-                  alt='telegram logo'
-                  width={32}
-                  height={32}
-                />
-                <p>@emilsin</p>
-          </div>
+          {placeLink('LinkedIn', 'in/siarhei-prakapovich-511466213/')}
+          {placeLink('GitHub', 'oddyca')}
+          {placeLink('Telegram')}
         </div>
         <div className="footer__column">
           <p>© 2023</p>
