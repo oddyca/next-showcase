@@ -20,11 +20,12 @@ const CustomFilter: React.FC<CustomFilterProps> = ({ allGenres }) => {
 
   const handleUpdateParams = (e: string) => {
     const searchParams = new URLSearchParams(window.location.search);
-    const genreID = genreIDs[genreNames.indexOf(e)]
+    const genreID = genreIDs[genreNames.indexOf(e)];
+    searchParams.delete('page');
     searchParams.set('genre', genreID);
 
     const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
-    router.push(newPathname);
+    router.push(newPathname, {scroll: false});
   }
 
   return (
