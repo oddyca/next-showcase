@@ -10,3 +10,10 @@
 h1 {
   font-size: 48px;
 }
+
+body {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: #282828;
+}

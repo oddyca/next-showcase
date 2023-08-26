@@ -127,8 +127,14 @@ export default function MoreDetailsModal({ innerText, isOpen, onClick, closeModa
                     </div>
                   </div>
                   <div className='modal__description'>
-                    <p>Info</p>
-                    <p className='event__description'>{info}</p>
+                    {
+                      info && 
+                        <>
+                          <p>Info</p>
+                          <p className='event__description'>{info}</p>
+                        </>
+                    }
+                    
                   </div>
                   <div className="modal__footer">
                     <div className="footer__socials">{filterSocials()}</div>

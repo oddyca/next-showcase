@@ -1,19 +1,33 @@
 .header {
-  position: absolute;
+  position: relative;
   max-width: 1440px;
   height: fit-content;
   padding: 1rem 0;
-  top: 2rem;
-  right: 0;
-  left: 0;
+  width: 100%;
   margin: 0 auto;
-  /*background-color: #ffffff15;
-  backdrop-filter: blur(16px); 
-  border-radius: 25px; */
   color: white;
+  background-color: #282828;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  & .link_active {
+    font-weight: 800 !important;
+    color: rgb(89, 92, 243) !important; 
+    border-bottom: 1px solid rgb(89, 92, 243);
+  }
+
+  & img {
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 1000px) {
+    padding: 1rem 2rem;
+  }
 
   & .header__nav {
     display: flex;
@@ -25,9 +39,10 @@
       cursor: pointer;
       color: white;
       font-size: 14px;
+      transition: .2s;
 
       &:hover {
-        color: white;
+        color: rgb(89, 92, 243);
       }
     }
   }
