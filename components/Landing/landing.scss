@@ -5,12 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom, #1818182a, #181818), url('/event-unsplash.jpg');
   background-size: cover;
+  
 }
 
 .hero__main {
-  background-color: transparent;
+  position: absolute;
+  pointer-events: none;
   max-width: 1440px;
   width: 100%;
   min-height: 500px;
@@ -37,6 +38,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
+
+    & a {
+      pointer-events: auto;
+    }
 
     @media screen and (max-width: 1000px) {
       align-items: center;

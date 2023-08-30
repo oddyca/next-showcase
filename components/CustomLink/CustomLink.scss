@@ -1,5 +1,5 @@
 .link_btn {
-  background-color:rgb(59, 62, 241);
+  background: var(--cta-color);
   color: white;
   padding: .5rem 1.25rem;
   font-weight: 600;
@@ -7,8 +7,9 @@
   text-decoration: none;
   width: fit-content;
   cursor: pointer;
+  transition: .2s;
 
   &:hover {
-    background-color:rgb(89, 92, 243);
+    filter: var(--cta-color_hover);
   }
 }

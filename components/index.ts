@@ -10,6 +10,7 @@ import PlaceholderCard from "./PlaceholderCard/PlaceholderCard";
 import EventCard from "./EventCard/EventCard";
 import CustomFilter from "./CustomFilter/CustomFilter";
 import Pagination from "./Pagination/Pagination";
+import ThreeBackground from "./ThreeBackground";
 
 export {
   Landing,
@@ -23,5 +24,6 @@ export {
   PlaceholderCard,
   EventCard,
   CustomFilter,
-  Pagination
+  Pagination,
+  ThreeBackground
 }

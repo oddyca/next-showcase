@@ -1,27 +1,36 @@
 .header {
-  position: relative;
+  position: absolute;
   max-width: 1440px;
   height: fit-content;
   padding: 1rem 0;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   margin: 0 auto;
   color: white;
-  background-color: #282828;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 250;
+  pointer-events: none;
+
+  & a {
+    pointer-events: auto;
+  }
 
   & .link_active {
     font-weight: 800 !important;
-    color: rgb(89, 92, 243) !important; 
-    border-bottom: 1px solid rgb(89, 92, 243);
+    color: var(--identity-color) !important; 
+    border-bottom: 1px solid var(--identity-color);
   }
 
   & img {
     transition: .2s;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
   }
 
@@ -29,10 +38,71 @@
     padding: 1rem 2rem;
   }
 
+  & .nav__burger {
+    position: relative;
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    background: transparent;
+    border: none;
+    pointer-events: auto;
+    cursor: pointer;
+
+    @media (max-width: 500px) {
+      display: block;
+      z-index: 350;
+    }
+  }
+
+  .burger_blur {
+    display: none;
+    height: 100dvh;
+    width: 100dvw;
+    position: absolute;
+    inset: 0;
+
+    .burger__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 4rem;
+      list-style: none;
+      padding: 8rem 4rem;
+
+      & .burger__link {
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+
+        & a {
+          color: white;
+          text-decoration: none;
+          cursor: pointer;
+          pointer-events: auto !important;
+
+          &:hover {
+            color: var(--identity-color) !important;
+          }
+        }
+      }
+    }
+    
+  }
+
+  .blur_show {
+    display: block;
+    background: rgba( 0, 0, 0, 0.6 );
+    backdrop-filter: blur(10px);
+  }
+
   & .header__nav {
     display: flex;
     gap: 3rem;
     list-style: none;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
 
     & a {
       text-decoration: none;
@@ -42,7 +112,7 @@
       transition: .2s;
 
       &:hover {
-        color: rgb(89, 92, 243);
+        color: var(--identity-color);
       }
     }
   }

@@ -1,9 +1,10 @@
-import { CustomLink } from '@/components';
+import { CustomLink, ThreeBackground } from '@/components';
 import './landing.scss';
 
 export default function Landing() {
   return (
     <div className='hero_container'>
+      <ThreeBackground />
       <div className='hero__main'>
         <div className='hero__welcome'>
           <h1>Find and book events — quickly and easily!</h1>
