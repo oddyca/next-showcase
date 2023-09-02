@@ -25,10 +25,10 @@ export default function Footer() {
       <div className="footer__container">
         <div className="footer__column">
           <Image
-            src='/logo-text.svg'
+            src='/logo.svg'
             alt='site logo'
-            width={144}
-            height={44}
+            width={64}
+            height={64}
           />
         </div>
         <div className="footer__column">

@@ -3,7 +3,8 @@
 :root {
   --cta-color: linear-gradient(135deg, #0c8cbf 0%, #b00c3f 100%);
   --cta-color_hover: drop-shadow(0px 0px 4px #2dacdf);
-  --identity-color: rgb(89, 92, 243);
+  --identity-color: #b00c3f;
+  --identity-hover: #ce3062;
 }
 
 * {

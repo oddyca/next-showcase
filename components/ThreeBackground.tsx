@@ -31,7 +31,7 @@ function Scene() {
 }
 
 function MovingSpot({ vec = new Vector3(), ...props }) {
-  const light = useRef()
+  const light = useRef<THREE.SpotLight>(null!)
   const viewport = useThree((state) => state.viewport)
  
   useFrame((state) => {

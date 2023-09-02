@@ -21,7 +21,15 @@ export default function Header() {
     const linkClass = where === 'burger' ? 'burger__link' : 'nav__link';
 
     return (
-      <ul className={`${where === 'burger' ? 'burger__nav' : 'header__nav'}`} onClick={() => setIsOpen(state => state = !state)}>
+      <ul 
+        className={`${where === 'burger' ? 'burger__nav' : 'header__nav'}`}
+        onClick={() => {
+          if (where === 'burger') {
+            setIsOpen(state => state = !state)
+          }
+          return
+        }}
+      >
         <li className={linkClass}>
           <Link shallow={true} href='#' className={pathName == "/contact" ? "link_active" : ""}>
             Contact
