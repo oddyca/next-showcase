@@ -31,7 +31,7 @@ export default function Header() {
         }}
       >
         <li className={linkClass}>
-          <Link shallow={true} href='#' className={pathName == "/contact" ? "link_active" : ""}>
+          <Link shallow={true} href='/contact' className={pathName == "/contact" ? "link_active" : ""}>
             Contact
           </Link>
         </li>

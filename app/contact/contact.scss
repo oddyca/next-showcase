@@ -1,0 +1,59 @@
+.contact-page {
+  flex-grow: 1;
+  align-self: center;
+  width: 100%;
+  max-width: 1440px;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  & .contact__wrapper {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 4rem;
+
+    .contact__socials {
+      display: flex;
+      gap: 6.66rem;
+
+      .socials__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+
+        & img {
+          filter: invert(51%) sepia(29%) saturate(0%) hue-rotate(213deg) brightness(93%) contrast(91%);
+          border-radius: 5px;
+        }
+
+        & a, p {
+          text-decoration: none;
+          color: #808080;
+        }
+
+        & a {
+          cursor: pointer;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .contact__location {
+      display: flex;
+      gap: .5rem;
+    }
+  }
+}
