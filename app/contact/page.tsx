@@ -4,7 +4,9 @@ import './contact.scss';
 export default function page() {
   return (
     <div className='contact-page'>
+      <h1>Get in touch</h1>
       <div className="contact__wrapper">
+        <div className="contact__divider"></div>
         <div className="contact__socials">
           <div className="socials__link">
             <Image
