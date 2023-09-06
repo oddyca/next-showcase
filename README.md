@@ -1,3 +1,5 @@
+[Deployed app](https://next-showcase-y947.vercel.app/)
+
 ## About
 This is a [Next.js](https://nextjs.org/) and TypeScript app with the usage of [Headless UI](https://headlessui.com/) and [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) libraries.
 
