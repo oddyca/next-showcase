@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 import './MoreDetailsModal.scss';
 import { MoreDetailsModal } from '../../types/types';
 
@@ -29,7 +29,7 @@ export default function MoreDetailsModal({ innerText, isOpen, onClick, closeModa
           elem === 'spotify' ||
           elem === 'instagram'
         ) {
-          socialsLinks[elem] = socials[elem][0]['url'];
+          socialsLinks[elem] = socials[elem]![0]['url'];
         }
       });
 
