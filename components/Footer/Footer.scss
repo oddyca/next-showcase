@@ -1,5 +1,6 @@
 .footer {
   background-color: #282828;
+  border-top: solid 1px #383838;
 
   & .footer__container {
     margin: 0 auto;
@@ -16,11 +17,9 @@
     }
 
     @media (max-width: 400px) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
+      display: flex;
+      flex-direction: row;
       gap: 2.5rem;
-      margin-left: 2rem;
     }
 
     & .footer__column {

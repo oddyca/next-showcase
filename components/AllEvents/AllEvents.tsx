@@ -1,16 +1,12 @@
 import { EventCard } from '@/components';
-import { ImageObject } from '../../types/types';
+import { AllEvents, Image } from '../../types/types';
 
-type AllEventsProps = {
-  toRender: Object[]
-}
+export default function AllEvents({ toRender }: AllEvents ) {
 
-export default function AllEvents({ toRender }: AllEventsProps) {
-
-  const findImg = (arr: ImageObject[]): string => {
+  const findImg = (arr: Image[]): string => {
     let img = '';
 
-    arr.map((val: ImageObject) => {
+    arr.map((val: Image) => {
       if (val["width"] === 640) img = val['url'].toString();
       return
     });
@@ -35,7 +31,7 @@ export default function AllEvents({ toRender }: AllEventsProps) {
 
   const renderEventsData = () => {
 
-    return toRender.map((data: any, id: number) => {
+    return toRender.map((data, id: number) => {
       return <EventCard 
         key={id}
         img={findImg(data.images)}
