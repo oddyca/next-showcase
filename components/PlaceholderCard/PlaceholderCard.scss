@@ -1,0 +1,174 @@
+@mixin placeholder-background {
+  position: relative;
+  overflow: hidden;
+  background-color: #171717;
+}
+
+.events__placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  width: 305px;
+  height: 359px;
+  background-color: #0F0F0F;
+  border: solid 1px #282828;
+  border-radius: 5px;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  & .placeholder__image {
+    width: 100%;
+    height: 369px;
+    border-radius: 5px 5px 0 0;
+    @include placeholder-background;
+
+    @media screen and (max-width: 1000px) {
+      flex: 2;
+      height: 100%;
+      border-radius: 5px 0 0 5px;
+
+      & .card_img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -45%;
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(90deg, #171717 5%, #282828 50%, #171717 95%);
+      animation: loading 1s infinite;
+    }
+  }
+
+  & .palceholder__main {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 0 .75rem .75rem .75rem;
+
+    @media screen and (max-width: 1000px) {
+      flex: 1;
+      padding: 1rem 1rem 1rem 0;
+    }
+
+    & .palceholder__header {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      & .placeholder__date {
+        @include placeholder-background;
+        width: 44px;
+        height: 14px;
+        border-radius: 5px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -45%;
+          height: 100%;
+          width: 100%;
+          background-image: linear-gradient(90deg, #171717 5%, #282828 50%, #171717 95%);
+          animation: loading 1s infinite;
+        }
+      }
+      
+      & .placeholder__name {
+        @include placeholder-background;
+        width: 100%;
+        height: 24px;
+        border-radius: 5px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -45%;
+          height: 100%;
+          width: 100%;
+          background-image: linear-gradient(90deg, #171717 5%, #282828 50%, #171717 95%);
+          animation: loading 1s infinite;
+        }
+      }
+    }
+
+    & .placeholder__genre {
+      @include placeholder-background;
+      width: 44px;
+      height: 14px;
+      border-radius: 5px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -45%;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(90deg, #171717 5%, #282828 50%, #171717 95%);
+        animation: loading 1s infinite;
+      }
+    }
+
+    & .placeholder__place {
+      @include placeholder-background;
+      width: 56px;
+      height: 20px;
+      border-radius: 5px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -45%;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(90deg, #171717 5%, #282828 50%, #171717 95%);
+        animation: loading 1s infinite;
+      }
+    }
+
+    & .placeholder__cta {
+      @include placeholder-background;
+      align-self: end;
+      width: 114px;
+      height: 36px;
+      border-radius: 25px;
+
+      @media screen and (max-width: 1000px) {
+        
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -45%;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(90deg, #171717 5%, #282828 50%, #171717 95%);
+        animation: loading 1s infinite;
+      }
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      left: -45%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}

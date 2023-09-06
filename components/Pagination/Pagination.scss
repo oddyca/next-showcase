@@ -1,0 +1,36 @@
+.pagination__container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: .4rem;
+  padding-right: 1rem;
+
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
+
+  & a {
+    display: block;
+    min-width: 3rem;
+    padding: .75rem 0;
+    text-align: center;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(41, 41, 41);
+    }
+  }
+
+  & .pagination__active {
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}
