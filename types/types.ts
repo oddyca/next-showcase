@@ -9,26 +9,12 @@ export type TSearchEvent = {
   allArtists: Set<string>;
 }
 
-interface PageLinks {
-  [key: string]: {
-    [key: string]: string
-  }
-}
-
 interface Pages {
   [key: string]: number
 }
 
-type JSONValue =
-    | string
-    | number
-    | boolean
-    | { [x: string]: JSONValue }
-    | Array<JSONValue>;
-
-
 export type EventsProps = {
-  toRender: JSONValue,
+  toRender: Event[],
   allArtists: Set<string>,
   allGenres: Map<string, string>,
   pages: Pages
