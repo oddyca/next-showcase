@@ -76,11 +76,6 @@ export interface PaginationProps {
 
 // Fetched JSON
 
-
-export interface Root {
-  events: Event[]
-}
-
 export interface Event {
   name: string
   type: string
@@ -93,7 +88,7 @@ export interface Event {
   dates: Dates
   classifications: Classification[]
   promoter?: Promoter
-  promoters?: Promoter2[]
+  promoters?: Promoter[]
   info?: string
   pleaseNote?: string
   priceRanges?: PriceRange[]
@@ -204,12 +199,6 @@ export interface Promoter {
   description: string
 }
 
-export interface Promoter2 {
-  id: string
-  name: string
-  description: string
-}
-
 export interface PriceRange {
   type: string
   currency: string
@@ -244,20 +233,12 @@ export interface AllInclusivePricing {
 }
 
 export interface Links {
-  self: Self
-  attractions: Attraction[]
-  venues: Venue[]
+  self: IHref
+  attractions: IHref[]
+  venues: IHref[]
 }
 
-export interface Self {
-  href: string
-}
-
-export interface Attraction {
-  href: string
-}
-
-export interface Venue {
+export interface IHref {
   href: string
 }
 
@@ -273,7 +254,7 @@ export interface Venue2 {
   test: boolean
   url?: string
   locale: string
-  images?: Image2[]
+  images?: Image[]
   postalCode: string
   timezone: string
   city: City
@@ -291,14 +272,6 @@ export interface Venue2 {
   upcomingEvents: UpcomingEvents
   ada?: Ada
   _links: Links2
-}
-
-export interface Image2 {
-  ratio: string
-  url: string
-  width: number
-  height: number
-  fallback: boolean
 }
 
 export interface City {
@@ -367,11 +340,7 @@ export interface Ada {
 }
 
 export interface Links2 {
-  self: Self2
-}
-
-export interface Self2 {
-  href: string
+  self: IHref
 }
 
 export interface Attraction2 {
@@ -382,116 +351,26 @@ export interface Attraction2 {
   url: string
   locale: string
   externalLinks: ExternalLinks
-  images: Image3[]
-  classifications: Classification2[]
-  upcomingEvents: UpcomingEvents2
-  _links: Links3
+  images: Image[]
+  classifications: Classification[]
+  upcomingEvents: UpcomingEvents
+  _links: Links2
 }
 
 export interface ExternalLinks {
-  youtube?: Youtube[]
-  twitter?: Twitter2[]
-  wiki: Wiki[]
-  facebook?: Facebook[]
-  spotify?: Spotify[]
-  musicbrainz: Musicbrainz[]
-  instagram?: Instagram[]
-  homepage?: Homepage[]
-  itunes?: Itune[]
+  youtube?: SocialUrl[]
+  twitter?: SocialUrl[]
+  wiki: SocialUrl[]
+  facebook?: SocialUrl[]
+  spotify?: SocialUrl[]
+  musicbrainz: SocialUrl[]
+  instagram?: SocialUrl[]
+  homepage?: SocialUrl[]
+  itunes?: SocialUrl[]
 }
 
-export interface Youtube {
+export interface SocialUrl {
   url: string
-}
-
-export interface Twitter2 {
-  url: string
-}
-
-export interface Wiki {
-  url: string
-}
-
-export interface Facebook {
-  url: string
-}
-
-export interface Spotify {
-  url: string
-}
-
-export interface Musicbrainz {
-  id: string
-}
-
-export interface Instagram {
-  url: string
-}
-
-export interface Homepage {
-  url: string
-}
-
-export interface Itune {
-  url: string
-}
-
-export interface Image3 {
-  ratio: string
-  url: string
-  width: number
-  height: number
-  fallback: boolean
-}
-
-export interface Classification2 {
-  primary: boolean
-  segment: Segment2
-  genre: Genre2
-  subGenre: SubGenre2
-  type: Type2
-  subType: SubType2
-  family: boolean
-}
-
-export interface Segment2 {
-  id: string
-  name: string
-}
-
-export interface Genre2 {
-  id: string
-  name: string
-}
-
-export interface SubGenre2 {
-  id: string
-  name: string
-}
-
-export interface Type2 {
-  id: string
-  name: string
-}
-
-export interface SubType2 {
-  id: string
-  name: string
-}
-
-export interface UpcomingEvents2 {
-  tmr: number
-  ticketmaster: number
-  _total: number
-  _filtered: number
-}
-
-export interface Links3 {
-  self: Self3
-}
-
-export interface Self3 {
-  href: string
 }
 
 export interface Seatmap {
@@ -514,40 +393,5 @@ export interface Product {
   id: string
   url: string
   type: string
-  classifications: Classification3[]
-}
-
-export interface Classification3 {
-  primary: boolean
-  segment: Segment3
-  genre: Genre3
-  subGenre: SubGenre3
-  type: Type3
-  subType: SubType3
-  family: boolean
-}
-
-export interface Segment3 {
-  id: string
-  name: string
-}
-
-export interface Genre3 {
-  id: string
-  name: string
-}
-
-export interface SubGenre3 {
-  id: string
-  name: string
-}
-
-export interface Type3 {
-  id: string
-  name: string
-}
-
-export interface SubType3 {
-  id: string
-  name: string
+  classifications: Classification[]
 }
